@@ -1,0 +1,16 @@
+/* index.css */
+
+canvas {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+}
+
+.market-tab.active {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ETF Prediction Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="bg-gray-100 p-4">
+
+    <!-- Header -->
+    <h1 class="text-3xl font-bold text-center mb-6">ETF Prediction Dashboard</h1>
+
+    <!-- Global Market Overview -->
+    <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+        <h2 class="text-xl font-semibold mb-2">Global Market Overview</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+            <div>📈 S&P 500: <span id="sp500Value" class="font-bold">-</span></div>
+            <div>📊 NASDAQ: <span id="nasdaqValue" class="font-bold">-</span></div>
+            <div>📉 VIX: <span id="vixValue" class="font-bold">-</span></div>
+            <div>🕒 Last Updated: <span id="lastUpdatedTime" class="font-bold">-</span></div>
+        </div>
+    </div>
+
+    <!-- ETF Cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div class="etf-card bg-white p-4 rounded-lg shadow cursor-pointer">
+            <h5 class="text-lg font-semibold">niftybees</h5>
+        </div>
+        <div class="etf-card bg-white p-4 rounded-lg shadow cursor-pointer">
+            <h5 class="text-lg font-semibold">bankbees</h5>
+        </div>
+        <div class="etf-card bg-white p-4 rounded-lg shadow cursor-pointer">
+            <h5 class="text-lg font-semibold">itbees</h5>
+        </div>
+        <div class="etf-card bg-white p-4 rounded-lg shadow cursor-pointer">
+            <h5 class="text-lg font-semibold">psubankbees</h5>
+        </div>
+    </div>
+
+    <!-- ETF Details -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="flex justify-between items-center mb-4">
+            <div>
+                <div class="text-2xl font-bold">₹0.00</div>
+                <div class="text-xs text-green-600">+0%</div>
+            </div>
+            <div>
+                <span class="px-2 py-1 bg-green-100 text-green-800 text-sm font-medium rounded">BUY</span>
+            </div>
+        </div>
+        <div class="h-2 w-full bg-gray-200 rounded">
+            <div class="bg-green-500 h-full rounded" style="width: 50%"></div>
+        </div>
+        <canvas id="priceChart" class="mt-6 w-full h-64"></canvas>
+    </div>
+
+    <!-- Backtesting Prediction Chart -->
+    <div class="bg-white p-6 rounded-lg shadow-md mt-6">
+        <h2 class="text-xl font-semibold mb-4">ETF Backtesting Prediction</h2>
+        <canvas id="backtestingChart" class="w-full h-64"></canvas>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+    <script src="app.js" defer></script>
+</body>
+</html>
